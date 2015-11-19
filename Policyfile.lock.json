@@ -1,0 +1,90 @@
+{
+  "revision_id": "68c692e940c0b5e81122e44c69b1eacdecbc9d82922219e664eecfec1042552f",
+  "name": "workstation",
+  "run_list": [
+    "recipe[workstation::default]"
+  ],
+  "cookbook_locks": {
+    "workstation": {
+      "version": "0.1.0",
+      "identifier": "5f92f016396471181d6d97c7fa2b0089d3fbda55",
+      "dotted_decimal_identifier": "26901682650178673.6787755976161835.591967017557",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": null,
+        "working_tree_clean": true,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "homebrew": {
+      "version": "1.13.0",
+      "identifier": "221e711344381aaab53bf964665e51e6621464f8",
+      "dotted_decimal_identifier": "9603620211537946.48050015232616030.90049929831672",
+      "cache_key": "homebrew-1.13.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/homebrew/versions/1.13.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/homebrew/versions/1.13.0/download",
+        "version": "1.13.0"
+      }
+    },
+    "build-essential": {
+      "version": "2.2.4",
+      "identifier": "b5e7c8482a2c85345939f89e77ee6c87cb5fdd5a",
+      "dotted_decimal_identifier": "51201818174827653.14734804308097006.119330488442202",
+      "cache_key": "build-essential-2.2.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/build-essential/versions/2.2.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/build-essential/versions/2.2.4/download",
+        "version": "2.2.4"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "workstation",
+        ">= 0.0.0"
+      ],
+      [
+        "homebrew",
+        "= 1.13.0"
+      ],
+      [
+        "build-essential",
+        "= 2.2.4"
+      ]
+    ],
+    "dependencies": {
+      "homebrew (1.13.0)": [
+        [
+          "build-essential",
+          ">= 2.1.2"
+        ]
+      ],
+      "build-essential (2.2.4)": [
+
+      ],
+      "workstation (0.1.0)": [
+        [
+          "homebrew",
+          "~> 1.3"
+        ]
+      ]
+    }
+  }
+}
