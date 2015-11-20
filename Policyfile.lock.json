@@ -1,5 +1,5 @@
 {
-  "revision_id": "68c692e940c0b5e81122e44c69b1eacdecbc9d82922219e664eecfec1042552f",
+  "revision_id": "12b96b1e873abcd736652ce41fe619bce86d397a617b5413959be1ca1cd869ac",
   "name": "workstation",
   "run_list": [
     "recipe[workstation::default]"
@@ -7,18 +7,19 @@
   "cookbook_locks": {
     "workstation": {
       "version": "0.1.0",
-      "identifier": "5f92f016396471181d6d97c7fa2b0089d3fbda55",
-      "dotted_decimal_identifier": "26901682650178673.6787755976161835.591967017557",
+      "identifier": "c7fe497153871b3b9bdac07305ecbf4d3acb0408",
+      "dotted_decimal_identifier": "56293111752787739.16778387459868140.210338419770376",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": null,
-        "working_tree_clean": true,
-        "published": false,
+        "remote": "https://github.com/willejs/chef-workstation.git",
+        "revision": "6cb335fb67062ffc9f008d5cb13735c5acae459d",
+        "working_tree_clean": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/HEAD -> origin/master",
+          "origin/master"
         ]
       },
       "source_options": {
@@ -34,6 +35,17 @@
       "source_options": {
         "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/homebrew/versions/1.13.0/download",
         "version": "1.13.0"
+      }
+    },
+    "mac_os_x": {
+      "version": "1.4.6",
+      "identifier": "b03f43d2291ec389a920bd1e6783738de9d11621",
+      "dotted_decimal_identifier": "49609156422344387.38748029886293891.127053350376993",
+      "cache_key": "mac_os_x-1.4.6-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/mac_os_x/versions/1.4.6/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/mac_os_x/versions/1.4.6/download",
+        "version": "1.4.6"
       }
     },
     "build-essential": {
@@ -65,6 +77,10 @@
         "= 1.13.0"
       ],
       [
+        "mac_os_x",
+        "= 1.4.6"
+      ],
+      [
         "build-essential",
         "= 2.2.4"
       ]
@@ -76,6 +92,9 @@
           ">= 2.1.2"
         ]
       ],
+      "mac_os_x (1.4.6)": [
+
+      ],
       "build-essential (2.2.4)": [
 
       ],
@@ -83,6 +102,10 @@
         [
           "homebrew",
           "~> 1.3"
+        ],
+        [
+          "mac_os_x",
+          "~> 1.4"
         ]
       ]
     }
