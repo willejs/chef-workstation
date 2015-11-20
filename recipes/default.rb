@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: default
 #
-# Copyright (c) 2015 The Authors, All Rights Reserved.
+# Copyright (c) 2015 Will Salt, All Rights Reserved.
 
 include_recipe 'build-essential'
 

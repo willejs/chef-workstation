@@ -20,6 +20,11 @@ node['workstation']['settings']['dock']['keep'].each do |app|
 			    </dict>"
 end
 
+execute "killall Dock" do
+  ignore_failure true
+  action :nothing
+end
+
 mac_os_x_userdefaults "com.apple.dock_persistent-apps" do
 	domain "com.apple.dock"
 	key 'persistent-apps'
@@ -30,8 +35,8 @@ mac_os_x_userdefaults "com.apple.dock_persistent-apps" do
 	notifies :run, 'execute[killall Dock]'
 end
 
-execute "killall Dock" do
-  ignore_failure true
+execute 'restart_menubar' do
+  command 'killall -KILL SystemUIServer'
   action :nothing
 end
 
@@ -40,6 +45,7 @@ mac_os_x_userdefaults 'turn on date & seconds for menubar clock' do
   key 'DateFormat'
   value 'EEE MMM d  h:mm:ss a'
   type 'string'
+  notifies :run, 'execute[restart_menubar]'
 end
 
 mac_os_x_userdefaults 'Set terminal color scheme to Homebrew' do
@@ -54,4 +60,14 @@ mac_os_x_userdefaults 'Set startup terminal color scheme to Homebrew' do
   key 'Startup Window Settings'
   value 'Homebrew'
   type 'string'
+end
+
+hostname = 'mbp'
+
+["scutil --set ComputerName #{hostname}",
+ "scutil --set LocalHostName #{hostname}",
+ "scutil --set HostName #{hostname}",
+ "hostname #{hostname}",
+ "diskutil rename / #{hostname}" ].each do |host_cmd|
+  execute host_cmd
 end
