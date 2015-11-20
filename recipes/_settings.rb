@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: _settings
 #
-# Copyright (c) 2015 The Authors, All Rights Reserved.
+# Copyright (c) 2015 Will Salt, All Rights Reserved.
 
 app_array = []
 node['workstation']['settings']['dock']['keep'].each do |app|
@@ -20,6 +20,12 @@ node['workstation']['settings']['dock']['keep'].each do |app|
 			    </dict>"
 end
 
+file "#{Chef::Config[:file_cache_path]}/persistent-apps" do
+  action :create
+  content app_array.join()
+  notifies :write, 'mac_os_x_userdefaults[com.apple.dock_persistent-apps]'
+end
+
 execute "killall Dock" do
   ignore_failure true
   action :nothing
@@ -31,7 +37,7 @@ mac_os_x_userdefaults "com.apple.dock_persistent-apps" do
 	value app_array
 	type 'array'
 	user ENV['SUDO_USER']
-	action :write
+	action :nothing
 	notifies :run, 'execute[killall Dock]'
 end
 
@@ -62,12 +68,13 @@ mac_os_x_userdefaults 'Set startup terminal color scheme to Homebrew' do
   type 'string'
 end
 
-hostname = 'mbp'
-
-["scutil --set ComputerName #{hostname}",
- "scutil --set LocalHostName #{hostname}",
- "scutil --set HostName #{hostname}",
- "hostname #{hostname}",
- "diskutil rename / #{hostname}" ].each do |host_cmd|
-  execute host_cmd
+# Set the hostname
+["scutil --set ComputerName #{node['workstation']['hostname']}",
+ "scutil --set LocalHostName #{node['workstation']['hostname']}",
+ "scutil --set HostName #{node['workstation']['hostname']}",
+ "hostname #{node['workstation']['hostname']}",
+ "diskutil rename / #{node['workstation']['hostname']}" ].each do |host_cmd|
+  execute host_cmd do
+  	not_if { Mixlib::ShellOut.new('hostname -f').run_command.stdout == node['workstation']['hostname'] }
+  end
 end

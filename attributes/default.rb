@@ -1,3 +1,5 @@
+default['workstation']['hostname'] = 'mbp'
+
 default['workstation']['settings']['dock']['keep'] = %W(
   /opt/homebrew-cask/Caskroom/google-chrome/latest/Google\ Chrome.app 
   /opt/homebrew-cask/Caskroom/sublime-text/2.0.2/Sublime\ Text\ 2.app
