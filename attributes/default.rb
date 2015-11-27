@@ -10,6 +10,7 @@ default['workstation']['settings']['dock']['keep'] = %W(
 default['workstation']['homebrew']['brews'] = %W( 
   tmux
   axel
+  jq
 )
 
 default['workstation']['homebrew']['casks'] = %W(
@@ -29,4 +30,6 @@ default['workstation']['homebrew']['casks'] = %W(
   gpgtools
   adobe-illustrator-cc
   wireshark
+  flux
+  cyberduck
 )

@@ -9,7 +9,8 @@ How To:
 chef update
 
 # export the policy file and create yourself a client.rb for chef zero
-chef export Policyfile.rb ./
+chef export Policyfile.rb ./.vendor
 
 # run chef!
-sudo chef-client -z -c ./client.rb 
+
+cd .vendor && sudo chef-client -z -c ./client.rb && cd .. || cd ..

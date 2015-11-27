@@ -1,20 +1,20 @@
 {
-  "revision_id": "1846e668ec22dfa0a6c199f7c534478f578531d89808ef834bb23c69137e2b12",
+  "revision_id": "94357be43524182020d686e1c711b2252d36976f3db4afc79e937e9e4a5a3db1",
   "name": "workstation",
   "run_list": [
     "recipe[workstation::default]"
   ],
   "cookbook_locks": {
     "workstation": {
-      "version": "0.1.0",
-      "identifier": "f351863bae4a1f9a4284d687d3a1b45ecec620d3",
-      "dotted_decimal_identifier": "68488056309434911.43420284715783073.198319289016531",
+      "version": "0.1.1",
+      "identifier": "a6ff129a7dc00b1d204c4530f7c2441b77da2c70",
+      "dotted_decimal_identifier": "47005301500395531.8198286275049410.74884765592688",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "git@github.com:willejs/chef-workstation.git",
-        "revision": "fe58225548d5cb0c130138025f8a635b372f3116",
+        "revision": "6149effecde9d37a6e969e6532c0e7be4e1f0348",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -98,7 +98,7 @@
       "build-essential (2.2.4)": [
 
       ],
-      "workstation (0.1.0)": [
+      "workstation (0.1.1)": [
         [
           "homebrew",
           "~> 1.3"
