@@ -4,13 +4,15 @@ This cookbook configures and installs all software needed on my workstation. I m
 
 How To:
 
-# Build your policyfile lockfile
-## this vendors all of your dependent cookbooks
-chef update
+Install chefdk
 
-# export the policy file and create yourself a client.rb for chef zero
-chef export Policyfile.rb ./.vendor
+##### Build your policyfile lockfile
+####### this vendors all of your dependent cookbooks
+```chef update```
 
-# run chef!
+##### export the policy file and create yourself a client.rb for chef zero
+```chef export Policyfile.rb ./.vendor```
 
-cd .vendor && sudo chef-client -z -c ./client.rb && cd .. || cd ..
+##### run chef!
+
+```cd .vendor && sudo chef-client -z -c ./client.rb; cd ..```
