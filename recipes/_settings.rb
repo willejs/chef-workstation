@@ -68,6 +68,13 @@ mac_os_x_userdefaults 'Set startup terminal color scheme to Homebrew' do
   type 'string'
 end
 
+mac_os_x_userdefaults 'Show hidden files in finder' do
+  domain 'com.apple.finder'
+  key 'AppleShowAllFile'
+  value true
+  type 'boolean'
+end
+
 # Set the hostname
 ["scutil --set ComputerName #{node['workstation']['hostname']}",
  "scutil --set LocalHostName #{node['workstation']['hostname']}",
