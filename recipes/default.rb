@@ -41,3 +41,5 @@ end
 link '/opt/homebrew-cask/Caskroom/sublime-text/2.0.2/Sublime\ Text\ 2.app' do
   to '/usr/local/bin/subl'
 end
+
+include_recipe 'workstation::_tmux_setup'
