@@ -8,5 +8,5 @@ version '0.2.1'
 
 supports 'osx'
 
-depends 'homebrew', '~> 1.3'
+depends 'homebrew', '~> 2.0.0'
 depends 'mac_os_x', '~> 1.4'

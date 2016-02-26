@@ -14,6 +14,7 @@ default['workstation']['homebrew']['brews'] = %W(
 )
 
 default['workstation']['homebrew']['casks'] = %W(
+  1password
   google-chrome
   sublime-text
   colloquy
