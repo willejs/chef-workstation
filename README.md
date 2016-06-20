@@ -19,7 +19,7 @@ This will create a client.rb for chef zero too
 
 #### Run chef!
 
-```cd .vendor && sudo chef-client -z -c ./client.rb; cd ..```
+```sudo chef-client -z -c .vendor/.chef/client.rb```
 
 ### Run Tests
 
